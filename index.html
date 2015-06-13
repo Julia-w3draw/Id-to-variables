@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html> 
+	<head></head>       
+	<body> 
+		<div id='one'> 
+			<div id='two' style="color: rgb(226, 61, 61)">                         
+			</div>
+		</div>
+	</body>       
+	<script> 
+	function _id2public_var(){ 
+				var all = document.getElementsByTagName("*"); 
+				window.E={}          
+				for (var i=0, max=all.length; i<max; i++){ 
+					if(all[i].id!=''){
+						if(E[all[i].id]!=undefined)
+						console.log('WARNING:_id2public_var(): id',all[i].id,' already exists')
+						E[all[i].id]=all[i] 
+					} 
+				}          
+			}          
+	_id2public_var() 
+	alert(E.two.style.color) 
+	</script> 
+</html>
